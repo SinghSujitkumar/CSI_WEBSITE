@@ -1,0 +1,267 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: black;
+	
+}
+#a11{
+	background-color: #325623;
+	color: #76fd23;
+}
+#a22{
+	background-color: #76fd23;
+	color: #325623;
+}
+.start{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #24981F;
+	animation-name: ups;
+	animation-duration: 3s; 
+	animation-delay: 2s;
+	animation-fill-mode: both;
+}
+@keyframes ups{
+	0%{
+		
+	}
+	100%{
+	transform: translateY(-100%);
+}}
+
+.start2{
+	position: absolute;
+	width: 100%;
+	
+	background-color: #24981F;
+	animation-name: ups2;
+	animation-duration: 3s; 
+	animation-delay: 2s;
+	animation-fill-mode: both;
+}
+@keyframes ups2{
+	0%{
+		transform: translateX(-3%);
+	}
+	100%{
+	opacity:0.2;
+	transform: translateX(-3%) ;
+}}
+
+.sidebar{
+		margin-left: 30px;
+		display: flex;
+		height: 50vh;
+		width: 20vw;
+		padding: 10px;
+		flex-direction: column;
+		justify-content: space-between;
+		
+
+}
+.row span{
+	font-size: 15px;
+	font-family: Times New Roman;
+	font-weight: bold;
+	letter-spacing: 2px;
+	color: blue;
+	margin: 5px;
+}
+
+
+
+.timer{
+	background-color: orange;
+	width: 30vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.row1 span{
+	font-size: 25px;
+	padding: 10px;
+}
+
+
+
+
+
+#logoo{
+height:70px;
+border-radius: 55%;
+margin-left: 5px;
+align-content: left;
+}
+#navbar{
+	/*margin: 10px 20% 30px 10%;
+	background-color:rgba(17,41,63,0.1);
+	
+	width:300px;
+	height: 100px;
+	margin: auto;
+	text-align: left;
+	font-size: 20PX;
+	
+	padding: 5px 8px;*/
+	align-self: flex-start;
+background-color:rgba(17,41,63,0.1);
+letter-spacing: 5px;
+	display: flex;
+	justify-content: space-around;
+	padding: 5px;
+	align-items: center;
+	animation-name: downs;
+	animation-duration: 2s;
+	animation-delay: 4s;
+	animation-fill-mode: both;
+	color: #eee;
+	animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	font-weight: bolder;
+}
+
+
+@keyframes downs{
+	0%{
+		transform: translate(-650%,0%);
+	}
+
+	100%{
+		transform: translate(0%,0%);
+}
+}
+
+footer{
+	margin: 90vh 10% 10px 10%;
+	background-color: #011;
+	display: flex;
+	width: 79%;
+	border: 2px solid white;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1px 15px;
+
+} 
+footer p{
+	color: #13a4ff;
+	font-weight: lighter;
+	letter-spacing: 4px;
+	font-size: 40px;
+}
+#a11{
+	background-color: #325623;
+	color: #76fd23;
+	padding: 1px;
+}
+#a22{
+	background-color: #76fd23;
+	color: #325623;
+	margin: 1px;
+}
+.jump{
+	animation-name: sss;
+	animation-delay: 5s;
+	animation-fill-mode: both;
+	animation-timing-function: linear;
+	animation-duration: 1s;
+
+}
+@keyframes sss{
+	0%{
+		transform: scale(0.9);
+		opacity: 0;
+		background-color: grey;
+	}
+	100%{
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+
+
+.slide1{
+	background-blend-mode: soft-light;
+	animation-name: slide11;
+	animation-delay: 5s;
+	animation-fill-mode: both;
+	animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	animation-duration: 1s;
+}
+@keyframes slide11{
+0%{
+	transform: translateX(-250%);
+
+}
+100%{
+	transform: translateX(0%);
+}
+
+}
+}
+   input, input: focus{
+   	color: white;
+   }
+   label{
+   	color: white;
+   }
+h4, h6{
+	color: #0145EC;}
+.card1{
+	padding: 10px;
+	border-radius: 8px;
+	animation-name: cardup;
+	animation-delay: 7.8s;
+	animation-fill-mode: both;
+	animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	animation-duration: 2s;
+
+}
+.card-panel :hover{
+	background-color: white;
+}
+@keyframes cardup{
+	0%{
+		transform: translateY(150%);
+	}
+	100%{
+		transform: translateY(-10%);
+	}
+}
+
+
+.rocket{
+	
+    position:absolute;
+    /*top:0;
+    left:0;*/
+    width:100%;
+    height:100%;
+/*    background:url(https://demo.tutorialzine.com/2013/10/css3-features-you-can-finally-use/assets/img/rocket.png) no-repeat 80px center;*/
+     background:url(https://www.the-art-of-web.com/images/rocket.gif) no-repeat  center;
+   
+    animation-name :orbit ;
+	animation-delay: 4s;
+	animation-fill-mode: both;
+	animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);/*
+	cubic-bezier(0.47,1.08,.26,1.26);linear;*/
+
+	animation-duration: 6s;
+
+}
+
+@keyframes orbit{
+	0%{
+		transform: translateY(200%);
+	}
+	64%{
+		transform: translateY(-20%);
+	}
+	100%{
+		transform: translateY(-200%);
+	}
+}
