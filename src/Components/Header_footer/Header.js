@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
-
-import { Link } from 'react-router-dom';
 
 import { CityLogo } from '../ui/icons';
 
+import MenuIcon from "@material-ui/icons/Menu";
+import IconButton from "@material-ui/core/IconButton";
+
+import SideDrawer from "./SideDrawer";
+
 class Header extends Component {
+  state = {
+		drawerOpen: false
+	};
+  toggleDrawer = value => {
+		this.setState({
+			drawerOpen: value
+		});
+	};
     render() {
         return (
             <AppBar
@@ -30,42 +40,21 @@ class Header extends Component {
                             />
                         </div>
                     </div>
-
-                    <Link to="/council">
-                        <Button color="inherit">
-                            <div className="footer_header_text">
-                                <h4>The Council</h4>
-                            </div>
-                        </Button>
-                    </Link>
-                    <Link to="/gallery">
-                        <Button color="inherit">
-                            <div className="footer_header_text">
-                                <h4>Gallery</h4>
-                            </div>
-                        </Button>
-                    </Link>
-                    <Link to="/register">
-                        <Button color="inherit">
-                            <div className="footer_header_text">
-                                <h4>Register</h4>
-                            </div>
-                        </Button>
-                    </Link>
-                    <Link to="/dashboard">
-                        <Button color="inherit">
-                            <div className="footer_header_text">
-                                <h4>Admin Login</h4>
-                            </div>
-                        </Button>
-                    </Link>
-                    <Link to="/events">
-                        <Button color="inherit">
-                            <div className="footer_header_text">
-                                <h4>Portfolio</h4>
-                            </div>
-                        </Button>
-                    </Link>
+                    <IconButton
+						              aria-label="Menu"
+                         color="inherit"
+						              onClick={() => {
+							this.toggleDrawer(true);
+						}}
+					>
+						<MenuIcon />
+					</IconButton>
+					<SideDrawer
+						open={this.state.drawerOpen}
+						onClose={value => {
+							this.toggleDrawer(value);
+						}}
+					/>
                 </Toolbar>
             </AppBar>
         );

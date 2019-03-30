@@ -10,7 +10,7 @@ const VunueNfo = () => {
             <div className="center_wrapper" style={{width:'80%'}}>
             <center>
             <div className="header_title" style={{ width:'500px', paddingTop:'20px'}}>
-                <h1>OUR GOAL</h1>                        
+                <h1>OUR GOAL</h1>
             </div>
         </center>
                 <div className="vn_wrapper">
@@ -21,7 +21,7 @@ const VunueNfo = () => {
                             <div className="vn_outer">
                                 <div className="vn_inner">
                                     <div className="vn_icon_square bck_red"></div>
-                                    <div 
+                                    <div
                                         className="vn_icon"
                                         style={{
                                             background:`url(${icon})`
@@ -38,7 +38,7 @@ const VunueNfo = () => {
                         </div>
 
                     </Zoom>
-                   
+
                         </div>
 
                         <div className="col-md-4" >
@@ -47,7 +47,7 @@ const VunueNfo = () => {
                             <div className="vn_outer">
                                 <div className="vn_inner">
                                     <div className="vn_icon_square bck_yellow"></div>
-                                    <div 
+                                    <div
                                         className="vn_icon"
                                         style={{
                                             background:`url(${icon})`
@@ -71,14 +71,14 @@ const VunueNfo = () => {
                             <div className="vn_outer">
                                 <div className="vn_inner">
                                     <div className="vn_icon_square bck_red"></div>
-                                    <div 
+                                    <div
                                         className="vn_icon"
                                         style={{
                                             background:`url(${icon})`
                                         }}
                                     ></div>
                                     <div className="vn_title">
-                                    Communication Skills
+                                    Verbal Skills
                                     </div>
                                     <div className="vn_desc">
                                     Improve vocal skills!..
@@ -91,13 +91,13 @@ const VunueNfo = () => {
                     </div>
 
 <div className="col-md-4" style={{marginTop:'50px'}} >
-                    
+
                     <Zoom duration={500}>
                         <div className="vn_item">
                             <div className="vn_outer">
                                 <div className="vn_inner">
                                     <div className="vn_icon_square bck_red"></div>
-                                    <div 
+                                    <div
                                         className="vn_icon"
                                         style={{
                                             background:`url(${icon})`
@@ -122,7 +122,7 @@ const VunueNfo = () => {
                             <div className="vn_outer">
                                 <div className="vn_inner">
                                     <div className="vn_icon_square bck_red"></div>
-                                    <div 
+                                    <div
                                         className="vn_icon"
                                         style={{
                                             background:`url(${icon})`
@@ -147,7 +147,7 @@ const VunueNfo = () => {
                             <div className="vn_outer">
                                 <div className="vn_inner">
                                     <div className="vn_icon_square bck_red"></div>
-                                    <div 
+                                    <div
                                         className="vn_icon"
                                         style={{
                                             background:`url(${icon})`

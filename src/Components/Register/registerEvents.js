@@ -241,7 +241,7 @@ class registerEvents extends Component {
                                                 });
                                                 console.log('success');
                                                 console.log('member '+dataToSubmit.ismember,'check '+this.state.ischeckbox,'show '+this.state.ischeckboxshow);
-                                        
+
                                                 this.successForm('Success');
                                             })
                                             .catch(e => {
@@ -295,7 +295,7 @@ class registerEvents extends Component {
                             </Zoom>
                             <Zoom duration={1500}>
                             <div align="justify" style={{background:'#ffffff',padding:'10px'}}>
-                                <div className="event_text"> <h2>Discription : </h2> </div>
+                                <div className="event_text"> <h2>Description : </h2> </div>
                                 <div style={{fontFamily: "'Righteous', cursive"}}>
                                 <p>{this.state.eventdetail}</p>
                                 </div>
@@ -353,10 +353,10 @@ class registerEvents extends Component {
                             </form>
                             </div>
                             </Zoom>
-                        
+
                     </div>
                 </div>
-                
+
             </div>
         );
     }
