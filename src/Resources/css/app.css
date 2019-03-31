@@ -165,9 +165,8 @@ footer .footer_discl {
     margin: 0 auto;
     width: 100%;
     margin-top: 90px;
-    height: 800px;
     overflow: hidden;
-    background-image: '../slide1.jpg';
+    background:"rgb(14, 23, 49) none repeat scroll 0% 0%"
 }
 
 .featured_stripes {
@@ -1196,8 +1195,67 @@ label { padding: 0 10px; }
 
 
 
+.cnavitem{
+    list-style: none;
+    display: inline-block;
+}
 
 
+.ctoggle{
+    width: 100%;
+    padding: 10px 20px;
+    background: #001f44;
+    text-align: right;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 30px;
+    display: none
+
+}
+
+@media(max-width:768px){
+    .ctoggle{
+        display: block;
+    }
+
+    .cnavgroup{
+        width: 100%;
+        display: none;
+    }
+    .cnavitem{
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .cnavgroup.active{
+        display: block;
+    }
+}
+
+.fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+  }
+
+  .fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-instagram {
+    background: #125688;
+    color: white;
+  }
 
 
 

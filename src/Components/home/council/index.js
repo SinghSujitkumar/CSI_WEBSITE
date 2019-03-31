@@ -285,7 +285,7 @@ return (
                            <div className="text">Atharva Gupte</div>
                         </div>
                         <div className="post">
-                           <div className="text">Jr. Web Editor</div>
+                           <div className="text">Jr. Editor</div>
                         </div>
                      </div>
                   </div>
@@ -605,7 +605,7 @@ return (
                            <div className="text">Sanket Paratkar</div>
                         </div>
                         <div className="post">
-                           <div className="text">Tresurer</div>
+                           <div className="text">Treasurer</div>
                         </div>
                      </div>
                   </div>

@@ -9,7 +9,7 @@ const VunueNfo = () => {
         <div className="bck_black">
             <div className="center_wrapper" style={{width:'80%'}}>
             <center>
-            <div className="header_title" style={{ width:'500px', paddingTop:'20px'}}>
+            <div className="header_title" style={{paddingTop:'20px'}}>
                 <h1>OUR GOAL</h1>
             </div>
         </center>

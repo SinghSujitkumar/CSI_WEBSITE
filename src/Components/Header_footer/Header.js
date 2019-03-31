@@ -6,17 +6,24 @@ import { CityLogo } from '../ui/icons';
 
 import MenuIcon from "@material-ui/icons/Menu";
 import IconButton from "@material-ui/core/IconButton";
-
 import SideDrawer from "./SideDrawer";
+import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
-  state = {
-		drawerOpen: false
+    state = {
+        classses: "cnavgroup"
 	};
   toggleDrawer = value => {
-		this.setState({
-			drawerOpen: value
-		});
+        if (this.state.classses == "cnavgroup"){
+            this.setState({
+                classses : "cnavgroup active"
+            });
+        }else{
+            this.setState({
+                classses : "cnavgroup"
+            });
+        }
 	};
     render() {
         return (
@@ -40,22 +47,100 @@ class Header extends Component {
                             />
                         </div>
                     </div>
-                    <IconButton
-						              aria-label="Menu"
-                         color="inherit"
-						              onClick={() => {
-							this.toggleDrawer(true);
-						}}
-					>
+
+                    <div className="hidden-xs">
+                    <Link className={this.state.classses} to="/council">
+                        <Button color="inherit">
+                            <div className="footer_header_text">
+                                <h4>The Council</h4>
+                            </div>
+                        </Button>
+                    </Link>
+                    <Link className={this.state.classses} to="/gallery">
+                        <Button color="inherit">
+                            <div className="footer_header_text">
+                                <h4>Gallery</h4>
+                            </div>
+                        </Button>
+                    </Link>
+                    <Link className={this.state.classses} to="/register">
+                        <Button color="inherit">
+                            <div className="footer_header_text">
+                                <h4>Register</h4>
+                            </div>
+                        </Button>
+                    </Link>
+                    <Link className={this.state.classses} to="/dashboard">
+                        <Button color="inherit">
+                            <div className="footer_header_text">
+                                <h4>Admin Login</h4>
+                            </div>
+                        </Button>
+                    </Link>
+
+                    <Link className={this.state.classses} to="/events">
+                        <Button color="inherit">
+                            <div className="footer_header_text">
+                                <h4>Portfolio</h4>
+                            </div>
+                        </Button>
+                    </Link>
+                    </div>
+                    <IconButton className="hidden-md hidden-sm hidden-lg" aria-label="Menu" color="inherit" onClick={() => {this.toggleDrawer(true);}}>
 						<MenuIcon />
 					</IconButton>
-					<SideDrawer
-						open={this.state.drawerOpen}
-						onClose={value => {
-							this.toggleDrawer(value);
-						}}
-					/>
                 </Toolbar>
+                <div className="hidden-md hidden-sm hidden-lg" data-trigger="focus">
+                <ul className={this.state.classses}>
+                        <li className="cnavitem">
+
+                    <Link className={this.state.classses} to="/council">
+                        <Button color="inherit">
+                            <div className="footer_header_text">
+                                <h4>The Council</h4>
+                            </div>
+                        </Button>
+                    </Link>
+                    </li>
+                    <li className="cnavitem">
+                    <Link className={this.state.classses} to="/gallery">
+                        <Button color="inherit">
+                            <div className="footer_header_text">
+                                <h4>Gallery</h4>
+                            </div>
+                        </Button>
+                    </Link>
+                    </li>
+                    <li className="cnavitem">
+                    <Link className={this.state.classses} to="/register">
+                        <Button color="inherit">
+                            <div className="footer_header_text">
+                                <h4>Register</h4>
+                            </div>
+                        </Button>
+                    </Link>
+                    </li>
+                    <li className="cnavitem">
+                    <Link className={this.state.classses} to="/dashboard">
+                        <Button color="inherit">
+                            <div className="footer_header_text">
+                                <h4>Admin Login</h4>
+                            </div>
+                        </Button>
+
+                    </Link>
+                    </li>
+                    <li className="cnavitem">
+                    <Link className={this.state.classses} to="/events">
+                        <Button color="inherit">
+                            <div className="footer_header_text">
+                                <h4>Portfolio</h4>
+                            </div>
+                        </Button>
+                    </Link>
+                    </li>
+                    </ul>
+                </div>
             </AppBar>
         );
     }

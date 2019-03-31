@@ -4,7 +4,7 @@ import Text from './Text';
 
 const Featured = () => {
     return (
-        <div className="featured_wrapper" style={{background:"rgb(14, 23, 49) none repeat scroll 0% 0%"}}>
+        <div className="featured_wrapper"  style={{height:`${window.innerHeight-90}px`, overflow:'hidden'}}>
             <Stripes/>
             <Text/>
         </div>

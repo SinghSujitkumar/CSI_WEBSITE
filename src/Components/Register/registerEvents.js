@@ -54,7 +54,8 @@ class registerEvents extends Component {
                     placeholder: 'Enter your email'
                 },
                 validation: {
-                    required: true
+                    required: true,
+                    email: true
                 },
                 valid: false,
                 validationMessage: '',
@@ -258,12 +259,12 @@ class registerEvents extends Component {
                                         console.log('not member');
                                         console.log('member '+dataToSubmit.ismember,'check '+this.state.ischeckbox,'show '+this.state.ischeckboxshow);
                                         this.successForm(
-                                            'You are not member'
+                                            'Please tick the check box'
                                         );
                                     }
                                 });
                         } else {
-                            this.successForm('Allready Register');
+                            this.successForm('Already Register');
                         }
                     });
             }
@@ -277,7 +278,7 @@ class registerEvents extends Component {
         return (
             <div className="container" style={{paddingTop:'100px'}}>
                 <div className="row">
-                    <div className="col-md-7">
+                    <div className="col-md-7 col-sm-12">
                         <div style={{ marginTop: '10px' }}>
                         <Zoom duration={1500}>
                             <div className="event_text">
@@ -290,6 +291,7 @@ class registerEvents extends Component {
                                     src={this.state.filename}
                                     alt="Avatar"
                                     className="image_event"
+                                    style={{width:'90%'}}
                                 />
                             </center>
                             </Zoom>
@@ -303,7 +305,7 @@ class registerEvents extends Component {
                             </Zoom>
                         </div>
                     </div>
-                    <div className="col-md-5">
+                    <div className="col-md-5 col-sm-12">
                         <Zoom duration={3000}>
                         <div style={{border: '3px solid #f1f1f1', margin:'10px', padding:'50px',paddingTop:'0px'}}>
                             <form onSubmit={event => this.submitForm(event)}>
@@ -330,7 +332,7 @@ class registerEvents extends Component {
                                 />
                                 <div style={this.state.ischeckboxshow ? {} : { display: 'none' }}>
                                     <input style={{width:'0px'}} checked={this.state.ischeckbox} onChange={this.toggleChange} id={this.state.eventId} type="checkbox"/>
-                                    <label htmlFor={this.state.eventId}>You are not member still you want to register.</label>
+                                    <label htmlFor={this.state.eventId}>You are not csi member. Do you still want to register.</label>
                                 </div>
                                 {/* checked={this.state.isChecked} onChange={this.toggleChange} */}
                                 {/* style={this.state.ischeckboxshow ? {} : { display: 'none' }} */}
