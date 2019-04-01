@@ -19,12 +19,12 @@ class registerEvents extends Component {
         events: [],
         memberId: '',
         eventId: '',
-        eventdetail:'',
+        eventdetail: '',
         filename: '',
         eventname: '',
         formType: '',
-        ischeckbox:false,
-        ischeckboxshow:false,
+        ischeckbox: false,
+        ischeckboxshow: false,
         formError: false,
         formSuccess: '',
         formdata: {
@@ -136,7 +136,7 @@ class registerEvents extends Component {
                     const name = eventArr[0].name;
                     const fname = eventArr[0].image;
                     const evnid = Object.keys(snapshot.val())[0];
-                    const detail = eventArr[0].detail
+                    const detail = eventArr[0].detail;
 
                     firebase
                         .storage()
@@ -149,7 +149,7 @@ class registerEvents extends Component {
                                 eventname: name,
                                 filename: url,
                                 eventId: evnid,
-                                eventdetail:detail
+                                eventdetail: detail
                             });
                         });
                 }
@@ -180,9 +180,9 @@ class registerEvents extends Component {
 
     toggleChange = () => {
         this.setState({
-          ischeckbox: !this.state.ischeckbox,
+            ischeckbox: !this.state.ischeckbox
         });
-      }
+    };
 
     submitForm(event) {
         event.preventDefault();
@@ -212,15 +212,26 @@ class registerEvents extends Component {
                                 .equalTo(dataToSubmit.email)
                                 .once('value')
                                 .then(snapshot => {
-                                    if ( snapshot.val() !== null || dataToSubmit.ismember) {
+                                    if (
+                                        snapshot.val() !== null ||
+                                        dataToSubmit.ismember
+                                    ) {
                                         dataToSubmit.ismember = true;
                                         this.setState({
-                                            dataToSubmit: dataToSubmit,
+                                            dataToSubmit: dataToSubmit
                                         });
-                                        console.log("member ");
+                                        console.log('member ');
                                     }
-                                    console.log('member '+dataToSubmit.ismember,'check '+this.state.ischeckbox,'show '+this.state.ischeckboxshow);
-                                    if (dataToSubmit.ismember || (this.state.ischeckbox && this.state.ischeckboxshow)) {
+                                    console.log(
+                                        'member ' + dataToSubmit.ismember,
+                                        'check ' + this.state.ischeckbox,
+                                        'show ' + this.state.ischeckboxshow
+                                    );
+                                    if (
+                                        dataToSubmit.ismember ||
+                                        (this.state.ischeckbox &&
+                                            this.state.ischeckboxshow)
+                                    ) {
                                         firebaseDB
                                             .ref(
                                                 `events/${
@@ -231,17 +242,25 @@ class registerEvents extends Component {
                                             .then(() => {
                                                 this.register = false;
                                                 dataToSubmit.ismember = false;
-                                                dataToSubmit.name='';
-                                                dataToSubmit.email='';
-                                                dataToSubmit.division='';
-                                                dataToSubmit.phone='';
+                                                dataToSubmit.name = '';
+                                                dataToSubmit.email = '';
+                                                dataToSubmit.division = '';
+                                                dataToSubmit.phone = '';
                                                 this.setState({
                                                     dataToSubmit: dataToSubmit,
-                                                    ischeckboxshow:false,
-                                                    ischeckbox:false
+                                                    ischeckboxshow: false,
+                                                    ischeckbox: false
                                                 });
                                                 console.log('success');
-                                                console.log('member '+dataToSubmit.ismember,'check '+this.state.ischeckbox,'show '+this.state.ischeckboxshow);
+                                                console.log(
+                                                    'member ' +
+                                                        dataToSubmit.ismember,
+                                                    'check ' +
+                                                        this.state.ischeckbox,
+                                                    'show ' +
+                                                        this.state
+                                                            .ischeckboxshow
+                                                );
 
                                                 this.successForm('Success');
                                             })
@@ -250,16 +269,20 @@ class registerEvents extends Component {
                                                     formError: true
                                                 });
                                             });
-                                    }else{
+                                    } else {
                                         dataToSubmit.ismember = false;
                                         this.setState({
                                             dataToSubmit: dataToSubmit,
-                                            ischeckboxshow:true
+                                            ischeckboxshow: true
                                         });
                                         console.log('not member');
-                                        console.log('member '+dataToSubmit.ismember,'check '+this.state.ischeckbox,'show '+this.state.ischeckboxshow);
+                                        console.log(
+                                            'member ' + dataToSubmit.ismember,
+                                            'check ' + this.state.ischeckbox,
+                                            'show ' + this.state.ischeckboxshow
+                                        );
                                         this.successForm(
-                                            'Please tick the check box'
+                                            'Please tick the check box.'
                                         );
                                     }
                                 });
@@ -276,89 +299,137 @@ class registerEvents extends Component {
     }
     render() {
         return (
-            <div className="container" style={{paddingTop:'100px'}}>
+            <div className="container" style={{ paddingTop: '100px' }}>
                 <div className="row">
                     <div className="col-md-7 col-sm-12">
                         <div style={{ marginTop: '10px' }}>
-                        <Zoom duration={1500}>
-                            <div className="event_text">
-                                <h2>Event:{this.state.eventname}</h2>
-                            </div>
+                            <Zoom duration={1500}>
+                                <div className="event_text">
+                                    <h2>Event:{this.state.eventname}</h2>
+                                </div>
                             </Zoom>
                             <Zoom duration={3500}>
-                            <center>
-                                <Image
-                                    src={this.state.filename}
-                                    alt="Avatar"
-                                    className="image_event"
-                                    style={{width:'90%'}}
-                                />
-                            </center>
+                                <center>
+                                    <Image
+                                        src={this.state.filename}
+                                        alt="Avatar"
+                                        className="image_event"
+                                        style={{ width: '90%' }}
+                                    />
+                                </center>
                             </Zoom>
                             <Zoom duration={1500}>
-                            <div align="justify" style={{background:'#ffffff',padding:'10px'}}>
-                                <div className="event_text"> <h2>Description : </h2> </div>
-                                <div style={{fontFamily: "'Righteous', cursive"}}>
-                                <p>{this.state.eventdetail}</p>
+                                <div
+                                    align="justify"
+                                    style={{
+                                        background: '#ffffff',
+                                        padding: '10px'
+                                    }}
+                                >
+                                    <div className="event_text">
+                                        {' '}
+                                        <h2>Description : </h2>{' '}
+                                    </div>
+                                    <div
+                                        style={{
+                                            fontFamily: "'Righteous', cursive"
+                                        }}
+                                    >
+                                        <p>{this.state.eventdetail}</p>
+                                    </div>
                                 </div>
-                            </div>
                             </Zoom>
                         </div>
                     </div>
                     <div className="col-md-5 col-sm-12">
                         <Zoom duration={3000}>
-                        <div style={{border: '3px solid #f1f1f1', margin:'10px', padding:'50px',paddingTop:'0px'}}>
-                            <form onSubmit={event => this.submitForm(event)}>
-                            <div className="event_text"><h2>Register </h2></div>
-                                <FormField
-                                    id={'name'}
-                                    formdata={this.state.formdata.name}
-                                    change={element => this.updateForm(element)}
-                                />
-                                <FormField
-                                    id={'email'}
-                                    formdata={this.state.formdata.email}
-                                    change={element => this.updateForm(element)}
-                                />
-                                <FormField
-                                    id={'division'}
-                                    formdata={this.state.formdata.division}
-                                    change={element => this.updateForm(element)}
-                                />
-                                <FormField
-                                    id={'phone'}
-                                    formdata={this.state.formdata.phone}
-                                    change={element => this.updateForm(element)}
-                                />
-                                <div style={this.state.ischeckboxshow ? {} : { display: 'none' }}>
-                                    <input style={{width:'0px'}} checked={this.state.ischeckbox} onChange={this.toggleChange} id={this.state.eventId} type="checkbox"/>
-                                    <label htmlFor={this.state.eventId}>You are not csi member. Do you still want to register.</label>
-                                </div>
-                                {/* checked={this.state.isChecked} onChange={this.toggleChange} */}
-                                {/* style={this.state.ischeckboxshow ? {} : { display: 'none' }} */}
-                                <br />
-                                {this.state.formError ? (
-                                    <div className="error_label">
-                                        Something is wrong, try again.
-                                    </div>
-                                ) : null}
-                                <br />
-                                <button style={{width:'100%'}}
-                                    onClick={event => this.submitForm(event)}
+                            <div
+                                style={{
+                                    border: '3px solid #f1f1f1',
+                                    margin: '10px',
+                                    padding: '50px',
+                                    paddingTop: '0px'
+                                }}
+                            >
+                                <form
+                                    onSubmit={event => this.submitForm(event)}
                                 >
-                                    Register
-                                </button>
-                                <br />
-                                <div className="success_label">
-                                    {this.state.formSuccess}
-                                </div>
-                            </form>
+                                    <div className="event_text">
+                                        <h2>Register </h2>
+                                    </div>
+                                    <FormField
+                                        id={'name'}
+                                        formdata={this.state.formdata.name}
+                                        change={element =>
+                                            this.updateForm(element)
+                                        }
+                                    />
+                                    <FormField
+                                        id={'email'}
+                                        formdata={this.state.formdata.email}
+                                        change={element =>
+                                            this.updateForm(element)
+                                        }
+                                    />
+                                    <FormField
+                                        id={'division'}
+                                        formdata={this.state.formdata.division}
+                                        change={element =>
+                                            this.updateForm(element)
+                                        }
+                                    />
+                                    <FormField
+                                        id={'phone'}
+                                        formdata={this.state.formdata.phone}
+                                        change={element =>
+                                            this.updateForm(element)
+                                        }
+                                    />
+                                    <div
+                                        style={
+                                            this.state.ischeckboxshow
+                                                ? {}
+                                                : { display: 'none' }
+                                        }
+                                    >
+                                        <input
+                                            style={{ width: '15px' }}
+                                            checked={this.state.ischeckbox}
+                                            onChange={this.toggleChange}
+                                            id={this.state.eventId}
+                                            type="checkbox"
+                                        />
+                                        <label htmlFor={this.state.eventId}>
+                                            You are not a csi member. Do you
+                                            still want to register?
+                                        </label>
+                                    </div>
+                                    {/* checked={this.state.isChecked} onChange={this.toggleChange} */}
+                                    {/* style={this.state.ischeckboxshow ? {} : { display: 'none' }} */}
+                                    <br />
+                                    {this.state.formError ? (
+                                        <div className="error_label">
+                                            Something is wrong, try again.
+                                        </div>
+                                    ) : null}
+                                    <br />
+                                    <button
+                                        style={{ width: '100%' }}
+                                        onClick={event =>
+                                            this.submitForm(event)
+                                        }
+                                    >
+                                        Register
+                                    </button>
+                                    <br />
+                                    <div className="success_label">
+                                        {this.state.formSuccess}
+                                    </div>
+                                </form>
                             </div>
-                            </Zoom>
-
+                        </Zoom>
                     </div>
                 </div>
-
             </div>
         );
     }
